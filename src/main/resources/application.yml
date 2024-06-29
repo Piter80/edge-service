@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: edge-service
+  lifecycle:
+    timeout-per-shutdown-phase: 15s
+
+server:
+  port: 9000
+  netty:
+    connection-timeout: 2s
+    idle-timeout: 5s
+  shutdown: graceful
