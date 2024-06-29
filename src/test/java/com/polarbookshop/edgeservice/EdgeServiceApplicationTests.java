@@ -1,4 +1,4 @@
-package com.polarbookshop.edge_service;
+package com.polarbookshop.edgeservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
