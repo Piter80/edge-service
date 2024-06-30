@@ -48,6 +48,11 @@ spring:
               args:
                 name: orderCircuitBreaker
                 fallbackUri: forward:/order-fallback
+        - id: spa-route
+          uri: ${SPA_URL:http://localhost:9004}
+          predicates:
+            - Path=/,/*.css,/*.js,/favicon.ico
+
       default-filters:
         - SaveSession
         - name: RequestRateLimiter
