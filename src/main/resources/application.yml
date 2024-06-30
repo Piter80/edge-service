@@ -1,6 +1,12 @@
 spring:
   application:
     name: edge-service
+  session:
+    store-type: redis
+    timeout: 10m
+    redis:
+      namespace: polar:edge
+
   lifecycle:
     timeout-per-shutdown-phase: 15s
   cloud:
@@ -33,6 +39,7 @@ spring:
                 name: orderCircuitBreaker
                 fallbackUri: forward:/order-fallback
       default-filters:
+        - SaveSession
         - name: RequestRateLimiter
           args:
             redis-rate-limiter:
